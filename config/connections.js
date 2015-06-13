@@ -25,5 +25,14 @@ module.exports.connections = {
     adapter: 'sails-disk'
   },
 
+  orientDb: {
+    adapter: 'sails-orientdb',
+    host: 'localhost',
+    port: 2424,
+    user: 'root',
+    password: 'root',
+    database: 'sor-foundation'
+  }
+
 
 };

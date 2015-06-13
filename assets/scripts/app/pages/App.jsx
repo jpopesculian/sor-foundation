@@ -9,15 +9,15 @@ import Authentication from 'app/services/Authentication'
 class App extends React.Component {
 
     constructor(props) {
-        super(props)
+      super(props)
     }
 
     render() {
-        return (
-            <div id="app-container">
-              <RouteHandler {...this.props} />
-            </div>
-        );
+      return (
+        <div id="app-container">
+          <RouteHandler {...this.props} />
+        </div>
+      );
     }
 
     static willTransitionTo(transition, params, query, callback) {
