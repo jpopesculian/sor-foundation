@@ -3,6 +3,11 @@ FROM iojs:onbuild
 # File Author / Maintainer
 MAINTAINER Julian Popescu <jpopesculian@gmail.com>
 
+# Install sass
+RUN apt-get update
+RUN apt-get install -y ruby
+RUN gem install sass
+
 # Copy app
 ADD /. /app
 
@@ -17,7 +22,7 @@ RUN cd /app && jspm install
 RUN npm install -g forever
 
 # Fix node command
-ENV NODE = node --es_staging --harmony_arrow_functions --harmony_proxies --harmony_arrays --harmony_array_includes
+ENV NODE "node --es_staging --harmony_arrow_functions --harmony_proxies --harmony_arrays --harmony_array_includes"
 
 # Expose ports
 EXPOSE 80
