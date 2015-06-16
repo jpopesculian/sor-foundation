@@ -18,9 +18,6 @@ RUN cd /app && npm install
 RUN npm install -g jspm
 RUN cd /app && jspm install
 
-# Install forever
-RUN npm install -g forever
-
 # Fix node command
 ENV NODE "node --es_staging --harmony_arrow_functions --harmony_proxies --harmony_arrays --harmony_array_includes"
 
@@ -31,4 +28,4 @@ EXPOSE 80
 WORKDIR /app
 
 # Run the application
-CMD ["forever", "start", "-c", "$NODE", "app.js", "--prod", "--silent", "--port=80"]
+CMD ["npm", "start", "--prod", "--silent", "--port=80"]
